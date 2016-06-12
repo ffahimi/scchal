@@ -7,6 +7,8 @@ import pandas as pd
 
 dataset_name = 'simplewiki.tsv'
 dataset_path = Constants.dataset_path
+output_name = 'logOutput.csv'
+output_path = Constants.output_path
 
 search_string = input("Please enter the search term(s):")
 proximity_search = ProximitySearch(search_string)
@@ -26,8 +28,10 @@ with open(dataset_path + dataset_name, 'r') as file:
     columns = ['title', 'body', 'title_has_all_terms', 'title_rank', 'body_rank', 'body_has_all_terms']
     articles_df = pd.DataFrame(articles, index=article_numbers, columns=columns)
     articles_df = articles_df.sort_values(['body_has_all_terms', 'body_rank', 'title_rank', 'title_has_all_terms'])
-    # articles_df = articles_df.sort_values(['body_rank'])
-    print(articles_df)
+
+    articles_top_results = articles_df['title'][0:10]
+
+    articles_top_results.to_csv(output_path + output_name)
 
 
 

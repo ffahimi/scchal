@@ -9,4 +9,7 @@ class Constants():
 
     cwd = os.getcwd()
 
+    #path to dataset
     dataset_path = cwd + os.sep + 'dataset' + os.sep
+    #path to the output directory
+    output_path = cwd + os.sep + 'output' + os.sep
