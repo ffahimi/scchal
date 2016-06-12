@@ -5,7 +5,7 @@ from setuptools import setup
 setup(name='SoundCloudChallenge',
       description='Python Distribution Utilities',
       author='Farshad Fahimi',
-      version='0.0.1',
+      version='0.0.2',
 
       packages=['src',
                 'src.configuration',
